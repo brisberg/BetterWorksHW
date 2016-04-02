@@ -1,16 +1,9 @@
 <div class="row">
-    {{expectedProgress}}
-    {{actualProgress}}
 
-    <div class="col-sm-4"
-         slider selected-range="30">
-    </div>
-
-    <div class="col-sm-4"
-         slider selected-range="45">
-    </div>
-
-    <div class="col-sm-4"
-         slider selected-range="55">
+    <div ng-repeat="m in main.metrics">
+        <slider class="col-sm-4"
+                metric="m">
+            <h2>{{m.name}}</h2>
+        </slider>
     </div>
 </div>
