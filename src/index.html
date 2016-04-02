@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
 
   </head>
   <body ng-controller="MainCtrl as main" ng-class="{loading:loadingView}" class="bg-{{main.currentColor}}">
@@ -21,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a ui-sref="main" class="navbar-brand"><img src="assets/images/logo-50px.png" alt="betterworkshw"/></a>
+          <a ui-sref="main" class="navbar-brand" style="height: auto"><img src="assets/images/logo-50px.png" alt="betterworkshw"/></a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -36,12 +36,13 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="vendor/angular-ui-router.min.js"></script>
 
     <script src="app/betterworkshw.js"></script>
-    <script src="app/main/progress-selector-directive.js"></script>
     <script src="app/main/main-controller.js"></script>
+    <script src="app/dashboard/dashboard-controller.js"></script>
+    <script src="app/slider/slider-directive.js"></script>
     <script>
       var navMain = angular.element(".navbar-collapse");
       navMain.on("click", "a", null, function () {

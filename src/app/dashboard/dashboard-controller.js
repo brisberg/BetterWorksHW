@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('betterworkshw')
-    .controller('MainCtrl', [function () {
+    .controller('DashboardCtrl', [function () {
         var main = this;
 
     }])
