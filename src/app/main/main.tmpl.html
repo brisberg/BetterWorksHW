@@ -1,14 +1,17 @@
 <div class="block">
-    {{ctrl.expectedProgress}}
-    {{ctrl.actualProgress}}
+    {{expectedProgress}}
+    {{actualProgress}}
 
-    <div
-            progress-selector>
-
-    </div>
     <div
             class="col-sm-4"
-            maindir>
+            progress-selector
+            selectedRange="30">
 
     </div>
+    <maindir
+            class="col-sm-4"
+            selectedRange='actualProgress'
+            >
+
+    </maindir>
 </div>

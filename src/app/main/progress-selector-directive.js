@@ -1,15 +1,18 @@
 angular.module('betterworkshw')
-    .directive('progress-selector', function () {
-        var controller = function ($scope) {
-            var selectedRange = 0;
-        };
+    .controller('ProgressController', [$scope, function($scope) {
+        var ctrl = this;
 
+        $scope.actual = 45;
+    }])
+    .directive('progress-selector', function () {
         return {
             scope: {
-
+                selectedRange: '='
             },
             templateUrl: 'app/main/progress-selector.tmpl.html',
-            controller: controller,
+            controller: function () {
+                this.selectedRange = '65';
+            },
             controllerAs: 'ctrl',
             bindToController: true
         }
