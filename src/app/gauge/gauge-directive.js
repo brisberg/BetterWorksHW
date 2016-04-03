@@ -13,11 +13,15 @@ angular.module('betterworkshw')
                     repaint(metric);
                 });
 
+                $scope.$watch("metric.expected", function () {
+                    repaint(metric);
+                });
+
                 function repaint(metric) {
                     var arcInnerFrac = metric.expected / 100.0;
                     var arcOuterFrac = metric.current / 100.0;
                     var progressFrac = metric.current / metric.expected;
-                    var outerColor = "arc_outer_norm"
+                    var outerColor = "arc_outer_norm";
 
                     if (progressFrac < 0.25) {
                         outerColor = "arc_outer_danger"

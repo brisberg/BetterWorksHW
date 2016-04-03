@@ -13,14 +13,4 @@ angular.module('betterworkshw', [
                 controllerAs: 'ctrl'
             })
         ;
-    })
-    /*
-    .run(function ($rootScope, $state) {
-        $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-            event.preventDefault();
-            if (error === 'AUTH_REQUIRED') {
-                $state.go('login');
-            }
-        });
-    })*/
-;
+    });
