@@ -1,12 +1,23 @@
-Example Angular 1 application using ui-router.
+# Example Angular 1 application showing Custom Directives for gauge and slider.
 
-Next, you need to install all of your dependencies.
+## Running
 
-npm install
+You need to install all of your dependencies.
 
-And install and run the serve package so you can build the app.
+`npm install`
 
-npm install -g serve
-serve src/
+And install and run the serve package so you can run the app.
+
+`npm install -g serve`
+
+`serve src/`
 
 Navigate to http://localhost:3000
+
+## Testing
+
+`npm install karma`
+
+`npm install karma-jasmine karma-chrome-launcher`
+
+`karma start`

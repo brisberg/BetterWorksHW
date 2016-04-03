@@ -6,6 +6,7 @@ angular.module('betterworkshw')
             restrict: 'E',
             scope: { metric: '=' },
             templateUrl: 'app/slider/slider.tmpl.html',
+
             link: function ($scope, $element, $attrs) {
 
             }
