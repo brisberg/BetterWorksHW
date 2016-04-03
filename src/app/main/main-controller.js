@@ -9,8 +9,8 @@ angular.module('betterworkshw')
             {name: 'Quarterly reports filed', expected: 45, current: 10},
             {name: 'Summoning C\'thun', expected: 100, current: 92},
             {name: 'Version 2.4 release', expected: 64, current: 40},
-            {name: 'Sharpening pencils', expected: 64, current: 40},
-            {name: 'Fabricating potato chips', expected: 70, current: 65},
+            {name: 'Pencils Sharpened', expected: 64, current: 40},
+            {name: 'Potato chips fabricated', expected: 70, current: 65},
         ];
 
         $rootScope.updateMetric = function(metricName, newValue) {
