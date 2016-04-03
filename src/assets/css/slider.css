@@ -1,13 +1,13 @@
-.progress-box {
+.slider-box {
 	width: 100%;
 	margin: 20px 0;
 }
 
-.progress-box .percentage-cur .num {
+.slider-box .percentage-cur .num {
 	margin-right: 5px;
 }
 
-.progress-box .progress-bar {
+.slider-box .slider-bar {
 	width: 100%;
 	height: 12px;
 	background: #f2f1f1;
@@ -17,24 +17,24 @@
   position: relative;
 }
 
-.progress-box .progress-bar .inner {
+.slider-box .slider-bar .inner {
   position: relative;
 	width: 0;
 	height:100%;
 	background: #239bd6;
 }
 
-.progress-bar .inner {
+.slider-bar .inner {
 	height: 0;
 	width: 0;
 	transition: all 1s ease-out;
 }
 
-.progress-bar-slider .inner {
+.slider-bar-slider .inner {
   transition: none;
 }
 
-.progress-bar-slider .inner:after {
+.slider-bar-slider .inner:after {
   content: " ";
   width: 5px;
   height: 14px;;
@@ -48,7 +48,7 @@
   margin: 0px;
 }
 
-.progress-slider {
+.slider-slider {
   opacity: 0;
   width: 100%;
   height: 15px;

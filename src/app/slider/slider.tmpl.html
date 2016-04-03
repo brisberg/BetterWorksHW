@@ -1,15 +1,22 @@
-<div class="progress-selector">
-    {{metric.name}}
-    {{metric.current}}
-    {{metric.expected}}
-    {{getFraction(metric) | number}}
-    <div class="progress-box">
+<div class="slider">
+
+    <div class="slider-box">
         <div class="percentage-cur">
-            <span class="num">{{ metric.current }}%</span>
+            <span class="num">{{metric.current}}</span>
         </div>
-        <div class="progress-bar progress-bar-slider">
-            <input class="progress-slider" type="range" min="0" max="100" ng-model="metric.current">
+        <div class="slider-bar slider-bar-slider">
+            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.current" ng-change="currentChanged(metric.current)">
             <div class="inner" ng-style="{ width: metric.current + '%' || '0%' }"></div>
+        </div>
+    </div>
+
+    <div class="slider-box">
+        <div class="slider-cur">
+            <span class="num">{{metric.expected}}</span>
+        </div>
+        <div class="slider-bar slider-bar-slider">
+            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.expected">
+            <div class="inner" ng-style="{ width: metric.expected + '%' || '0%' }"></div>
         </div>
     </div>
 </div>

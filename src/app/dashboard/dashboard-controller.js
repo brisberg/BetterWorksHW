@@ -2,6 +2,6 @@
 
 angular.module('betterworkshw')
     .controller('DashboardCtrl', [function () {
-        var main = this;
+        var dashboard = this;
 
     }])

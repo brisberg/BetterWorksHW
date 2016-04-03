@@ -9,9 +9,13 @@ angular.module('betterworkshw')
             },
             templateUrl: 'app/slider/slider.tmpl.html',
             link: function ($scope, $element, $attrs) {
-                $scope.getFraction = function (metric) {
-                    return metric.current / metric.expected;
-                }
+                var rootScope = $scope.$root;
+                var metric = $scope.metric;
+
+                $scope.currentChanged = function (newCurrentValue) {
+                    console.log("change");
+                    rootScope.updateMetric(metric.name, parseInt(newCurrentValue));
+                };
             }
         }
     }]
