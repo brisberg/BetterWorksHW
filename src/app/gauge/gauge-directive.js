@@ -38,18 +38,6 @@ angular.module('betterworkshw')
                         $element[0].appendChild(errorText);
                     }
                     else {
-                        var arcInnerFrac = metric.expected;
-                        var arcOuterFrac = metric.current;
-                        var progressFrac = metric.current / metric.expected;
-                        var progressLabel = (100 * metric.current).toFixed() + "";
-                        var outerColor = "arc_outer_norm";
-
-                        if (progressFrac < 0.25) {
-                            outerColor = "arc_outer_danger"
-                        } else if (progressFrac < 0.5) {
-                            outerColor = "arc_outer_warn"
-                        }
-
                         if (typeof(d3) !== "undefined") { // Make sure d3 library is available
                             d3.select($element[0]).selectAll("*").remove();
 
@@ -71,7 +59,7 @@ angular.module('betterworkshw')
 
                             svg.append("path")
                                 .datum({endAngle:0, innerRadius:54, outerRadius:60})
-                                .attr("class", "arc_outer " + outerColor)
+                                .attr("class", "arc_outer arc_outer_norm")
                                 .attr("d", arc_outer)
 
                             var circle_center = d3.svg.arc()
@@ -116,8 +104,22 @@ angular.module('betterworkshw')
                         .call(arcTween, (metric.expected * 2 * Math.PI));
                     arcOuter.transition()
                         .duration(1200)
-                        .call(arcTween, (metric.current * 2 * Math.PI));
+                        .call(arcTween, (metric.current * 2 * Math.PI))
+                        .style('fill', outerGaugeColor(metric));
                     progressNumber.text((100 * metric.current).toFixed() + "")
+                }
+
+                //determine outer arc color
+                function outerGaugeColor(metric) {
+                    var progressFrac = metric.current / metric.expected;
+
+                    if (progressFrac < 0.25) {
+                        return "#EB330E"; // red warning
+                    } else if (progressFrac < 0.5) {
+                        return "#E8AE25"; // orange warning
+                    } else {
+                        return "#78C000"; // green normal
+                    }
                 }
 
                 // set up animation functions
