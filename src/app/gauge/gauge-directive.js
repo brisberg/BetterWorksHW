@@ -22,6 +22,7 @@ angular.module('betterworkshw')
                     var arcInnerFrac = metric.expected / 100.0;
                     var arcOuterFrac = metric.current / 100.0;
                     var progressFrac = metric.current / metric.expected;
+                    var progressLabel = "94%";
                     var outerColor = "arc_outer_norm";
 
                     if (progressFrac < 0.25) {
@@ -71,6 +72,19 @@ angular.module('betterworkshw')
                         svg.append("path")
                             .attr("class", "circle_center")
                             .attr("d", circle_center);
+
+                        svg.append("text")
+                            .style("text-anchor", "middle")
+                            .attr("font-size", "20px")
+                            .text(progressLabel)
+                            .attr("transform", "translate(0,-2)");
+
+                        svg.append("text")
+                            .style("text-anchor", "middle")
+                            .attr("font-size", "12px")
+                            .attr("font-style", "oblique")
+                            .text("Progress")
+                            .attr("transform", "translate(0,15)");
                     }
                 }
             }
