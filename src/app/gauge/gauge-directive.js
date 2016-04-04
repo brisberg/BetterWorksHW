@@ -21,6 +21,7 @@ angular.module('betterworkshw')
                 function repaint(metric) {
                     if (typeof(metric.expected) !== "number" || metric.expected < 0.0 || metric.expected > 1.0) {
                         // Based on http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+                        // If the data is wrong, remove all SVG elements and place an error text.
                         while ($element[0].firstChild) {
                             $element[0].removeChild($element[0].firstChild);
                         }
@@ -29,6 +30,7 @@ angular.module('betterworkshw')
                     }
                     else if (typeof(metric.current) !== "number" || metric.current < 0.0 || metric.current > 1.0) {
                         // Based on http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+                        // If the data is wrong, remove all SVG elements and place an error text.
                         while ($element[0].firstChild) {
                             $element[0].removeChild($element[0].firstChild);
                         }
@@ -39,7 +41,7 @@ angular.module('betterworkshw')
                         var arcInnerFrac = metric.expected;
                         var arcOuterFrac = metric.current;
                         var progressFrac = metric.current / metric.expected;
-                        var progressLabel = (100 * metric.current).toFixed() + "%";
+                        var progressLabel = (100 * metric.current).toFixed();
                         var outerColor = "arc_outer_norm";
 
                         if (progressFrac < 0.25) {
