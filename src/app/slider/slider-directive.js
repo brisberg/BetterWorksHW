@@ -8,11 +8,11 @@ angular.module('betterworkshw')
             templateUrl: 'app/slider/slider.tmpl.html',
 
             link: function ($scope, $element, $attrs) {
-                $scope.currentStr  = $scope.metric.current;
+                $scope.actualStr  = $scope.metric.actual;
                 $scope.expectedStr = $scope.metric.expected;
 
-                $scope.$watch("currentStr", function () {
-                    $scope.metric.current = parseFloat($scope.currentStr);
+                $scope.$watch("actualStr", function () {
+                    $scope.metric.actual = parseFloat($scope.actualStr);
                 });
                 $scope.$watch("expectedStr", function () {
                     $scope.metric.expected = parseFloat($scope.expectedStr);

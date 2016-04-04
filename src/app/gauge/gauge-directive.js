@@ -10,7 +10,7 @@ angular.module('betterworkshw')
 
                 var metric = $scope.metric;
 
-                $scope.$watch("metric.current", function () {
+                $scope.$watch("metric.actual", function () {
                     update(metric);
                 });
 
@@ -28,13 +28,13 @@ angular.module('betterworkshw')
                         var errorText = document.createTextNode("Invalid 'Expected' Value");
                         $element[0].appendChild(errorText);
                     }
-                    else if (typeof(metric.current) !== "number" || metric.current < 0.0 || metric.current > 1.0) {
+                    else if (typeof(metric.actual) !== "number" || metric.actual < 0.0 || metric.actual > 1.0) {
                         // Based on http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
                         // If the data is wrong, remove all SVG elements and place an error text.
                         while ($element[0].firstChild) {
                             $element[0].removeChild($element[0].firstChild);
                         }
-                        var errorText = document.createTextNode("Invalid 'Current' Value");
+                        var errorText = document.createTextNode("Invalid 'Actual' Value");
                         $element[0].appendChild(errorText);
                     }
                     else {
@@ -104,14 +104,14 @@ angular.module('betterworkshw')
                         .call(arcTween, (metric.expected * 2 * Math.PI));
                     arcOuter.transition()
                         .duration(1200)
-                        .call(arcTween, (metric.current * 2 * Math.PI))
+                        .call(arcTween, (metric.actual * 2 * Math.PI))
                         .style('fill', outerGaugeColor(metric));
-                    progressNumber.text((100 * metric.current).toFixed() + "")
+                    progressNumber.text((100 * metric.actual).toFixed() + "")
                 }
 
                 //determine outer arc color
                 function outerGaugeColor(metric) {
-                    var progressFrac = metric.current / metric.expected;
+                    var progressFrac = metric.actual / metric.expected;
 
                     if (progressFrac < 0.25) {
                         return "#EB330E"; // red warning

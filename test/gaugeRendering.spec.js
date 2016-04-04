@@ -19,7 +19,7 @@ describe('Gauge Directive Rendering', function () {
         scope.metric = {
             name: 'Wombats',
             expected: 1.00,
-            current: 0.66
+            actual: 0.66
         };
         scope.title = 'BetterWorksHW';
 
@@ -56,7 +56,7 @@ describe('Gauge Directive Rendering', function () {
         scope.$digest();
 
         expect(element.html().trim()).toEqual(
-            "Invalid 'Current' Value");
+            "Invalid 'Actual' Value");
     });
 
     it("should validate missing 'Expected' value", function () {
@@ -64,7 +64,7 @@ describe('Gauge Directive Rendering', function () {
 
         scope.metric = {
             name: 'Wombats',
-            current: 0.50
+            actual: 0.50
         };
         scope.title = 'ANG09';
 
@@ -81,7 +81,7 @@ describe('Gauge Directive Rendering', function () {
 
         scope.metric = {
             name: 'Wombats',
-            current: 0.50,
+            actual: 0.50,
             expected: -0.20
         };
         scope.title = 'ANG09';
@@ -99,7 +99,7 @@ describe('Gauge Directive Rendering', function () {
 
         scope.metric = {
             name: 'Wombats',
-            current: 0.50,
+            actual: 0.50,
             expected: 1.20
         };
         scope.title = 'ANG09';
@@ -112,12 +112,12 @@ describe('Gauge Directive Rendering', function () {
             "Invalid 'Expected' Value");
     });
 
-    it("should validate 'Current' value greater than or equal to 0.0", function () {
+    it("should validate 'Actual' value greater than or equal to 0.0", function () {
         var scope = rootScope.$new();
 
         scope.metric = {
             name: 'Wombats',
-            current: -0.20,
+            actual: -0.20,
             expected: 0.50
         };
         scope.title = 'ANG09';
@@ -127,15 +127,15 @@ describe('Gauge Directive Rendering', function () {
         scope.$digest();
 
         expect(element.html().trim()).toEqual(
-            "Invalid 'Current' Value");
+            "Invalid 'Actual' Value");
     });
 
-    it("should validate 'Current' value less than or equal to 1.0", function () {
+    it("should validate 'Actual' value less than or equal to 1.0", function () {
         var scope = rootScope.$new();
 
         scope.metric = {
             name: 'Wombats',
-            current: 1.2,
+            actual: 1.2,
             expected: 0.50
         };
         scope.title = 'ANG09';
@@ -145,6 +145,6 @@ describe('Gauge Directive Rendering', function () {
         scope.$digest();
 
         expect(element.html().trim()).toEqual(
-            "Invalid 'Current' Value");
+            "Invalid 'Actual' Value");
     });
 });

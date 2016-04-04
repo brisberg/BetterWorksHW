@@ -2,11 +2,11 @@
 
     <div class="slider-box">
         <div class="slider-cur">
-            <span class="num">{{currentStr}}</span>
+            <span class="num">{{actualStr}}</span>
         </div>
         <div class="slider-bar slider-bar-slider">
-            <input class="slider-slider" type="range"  min="0.0" max="1.00" step="0.01" ng-model="currentStr">
-            <div class="inner" ng-style="{ width: 100*metric.current + '%' || '0%' }"></div>
+            <input class="slider-slider" type="range"  min="0.0" max="1.00" step="0.01" ng-model="actualStr">
+            <div class="inner" ng-style="{ width: 100*metric.actual + '%' || '0%' }"></div>
         </div>
     </div>
 
