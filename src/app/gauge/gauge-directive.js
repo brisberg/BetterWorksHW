@@ -93,8 +93,8 @@ angular.module('betterworkshw')
                                 .attr("class", "arc_inner")
                                 .attr("d", arc_inner)
                                 .transition()
-                                .duration(3000)
-                                .call(arcTween, (arcOuterFrac * 2 * Math.PI));
+                                .duration(1200)
+                                .call(arcTween, (arcInnerFrac * 2 * Math.PI));
 
                             var arc_outer = drawArc({endAngle:0, innerRadius:54, outerRadius:60});
 
@@ -103,7 +103,7 @@ angular.module('betterworkshw')
                                 .attr("class", outerColor)
                                 .attr("d", arc_outer)
                                 .transition()
-                                .duration(3000)
+                                .duration(1200)
                                 .call(arcTween, (arcOuterFrac * 2 * Math.PI));
 
                             var circle_center = d3.svg.arc()
