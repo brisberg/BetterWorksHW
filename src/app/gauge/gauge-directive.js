@@ -92,16 +92,21 @@ angular.module('betterworkshw')
                                 .attr("class", "circle_center")
                                 .attr("d", circle_center);
 
-                            svg.append("text")
+                            var upperText = svg.append("text")
                                 .style("text-anchor", "middle")
-                                .attr("font-size", "20px")
-                                .text(progressLabel)
-                                .attr("transform", "translate(0,-2)");
+                                .attr("transform", "translate(0,-0)");
+
+                            upperText.append("tspan")
+                                .attr("class", "progress_number")
+                                .text(progressLabel);
+
+                            upperText.append("tspan")
+                                .attr("class", "progress_percent")
+                                .text("%");
 
                             svg.append("text")
                                 .style("text-anchor", "middle")
-                                .attr("font-size", "12px")
-                                .attr("font-style", "oblique")
+                                .attr("class", "progress_label")
                                 .text("Progress")
                                 .attr("transform", "translate(0,15)");
                         }

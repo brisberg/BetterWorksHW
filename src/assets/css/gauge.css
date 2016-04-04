@@ -17,3 +17,16 @@
 .circle_center {
     fill: #F4F4F4;
 }
+
+.progress_number {
+    font-size: 30px;
+    font-family: serif;
+}
+
+.progress_percent {
+    font-size: 18px;
+}
+
+.progress_label {
+    fill: #898989;
+}
