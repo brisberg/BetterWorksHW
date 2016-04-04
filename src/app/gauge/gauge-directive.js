@@ -19,8 +19,8 @@ angular.module('betterworkshw')
                 });
 
                 function repaint(metric) {
-                    var arcInnerFrac = metric.expected / 100.0;
-                    var arcOuterFrac = metric.current / 100.0;
+                    var arcInnerFrac = metric.expected;
+                    var arcOuterFrac = metric.current;
                     var progressFrac = metric.current / metric.expected;
                     var progressLabel = "94%";
                     var outerColor = "arc_outer_norm";

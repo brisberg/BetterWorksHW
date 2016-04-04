@@ -17,12 +17,12 @@ describe('Controller: MainCtrl', function () {
 
     it('should have created the metrics', function () {
         expect(ctrl.metrics).toEqual([
-                {name: 'JIRA tickets closed', expected: 85, current: 80},
-                {name: 'Quarterly reports filed', expected: 45, current: 10},
-                {name: 'Summoning C\'thun', expected: 100, current: 92},
-                {name: 'Version 2.4 release', expected: 64, current: 40},
-                {name: 'Pencils sharpened', expected: 64, current: 40},
-                {name: 'Potato chips fabricated', expected: 70, current: 65}
+                {name: 'JIRA tickets closed', expected: 0.85, current: 0.80},
+                {name: 'Quarterly reports filed', expected: 0.45, current: 0.10},
+                {name: 'Summoning C\'thun', expected: 1.00, current: 0.92},
+                {name: 'Version 2.4 release', expected: 0.64, current: 0.40},
+                {name: 'Pencils sharpened', expected: 0.64, current: 0.40},
+                {name: 'Potato chips fabricated', expected: 0.70, current: 0.65}
             ]
         )
     });
