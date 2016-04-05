@@ -147,8 +147,7 @@ angular.module('betterworkshw')
                     });
                 }
 
-
-                // set up initial display.
+                // set up initial display
                 render(metric);
                 update(metric);
             }

@@ -22,7 +22,7 @@ gulp.task('tdd', function (done) {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
+  return gulp.src('./src/**/*')
       .pipe(ghPages());
 });
 
