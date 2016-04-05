@@ -1,0 +1,22 @@
+<div class="slider">
+
+    <div class="slider-box">
+        <div class="slider-actual">
+            <span class="num">{{actualStr}}</span>
+        </div>
+        <div class="slider-bar slider-bar-slider">
+            <input class="slider-slider" type="range"  min="0.0" max="1.00" step="0.01" ng-model="actualStr">
+            <div class="inner" ng-style="{ width: 100*metric.actual + '%' || '0%' }"></div>
+        </div>
+    </div>
+
+    <div class="slider-box">
+        <div class="slider-expected">
+            <span class="num">{{expectedStr}}</span>
+        </div>
+        <div class="slider-bar slider-bar-slider">
+            <input class="slider-slider" type="range" min="0.0" max="1.00" step="0.01" ng-model="expectedStr">
+            <div class="inner" ng-style="{ width: 100*metric.expected + '%' || '0%' }"></div>
+        </div>
+    </div>
+</div>

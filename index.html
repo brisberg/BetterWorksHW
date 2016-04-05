@@ -1,7 +1,57 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <script src="BetterWorksHW.min.js"></script>
-    </head>
-    <body></body>
+<!doctype html>
+<html ng-app="betterworkshw">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>BetterWorksHW</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/gauge.css">
+
+  </head>
+  <body ng-controller="MainCtrl as main" ng-class="{loading:loadingView}" class="bg-{{main.currentColor}}">
+    <div class="app-wrap">
+      <header class="navbar-clear nav-wrap" role="banner">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a ui-sref="main" class="navbar-brand" style="height: auto"><img src="assets/images/logo-50px.png" alt="betterworkshw"/></a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+          </ul>
+        </div>
+      </header>
+
+      <div ui-view class="content" style="padding:15px"></div>
+
+      <div class="modal"></div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="vendor/angular-ui-router.min.js"></script>
+    <script src="vendor/d3.min.js"></script>
+
+    <script src="app/betterworkshw.js"></script>
+    <script src="app/main/main-controller.js"></script>
+    <script src="app/dashboard/dashboard-controller.js"></script>
+    <script src="app/slider/slider-directive.js"></script>
+    <script src="app/gauge/gauge-directive.js"></script>
+
+    <script>
+      var navMain = angular.element(".navbar-collapse");
+      navMain.on("click", "a", null, function () {
+         navMain.collapse('hide');
+      });
+    </script>
+  </body>
 </html>
