@@ -1,5 +1,14 @@
 'use strict';
 
+/**
+ * Gauge directive draws two fractional arcs indicating the actual and expected progress towards completing a goal.
+ *
+ * The input data should be a metric{name: string, expected: number (0.0 - 1.0), actual: number (0.0 - 1.0)
+ *
+ * @author Brandon Risberg
+ * @since 4/2/2016
+ */
+
 angular.module('betterworkshw')
     .directive('gauge', [function () {
         return {
