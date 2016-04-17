@@ -8,6 +8,7 @@ describe('Gauge Directive Rendering', function () {
 
     var compile, mockBackend, rootScope;
 
+    // Helper functions
     function flushAllD3Transitions() {
         var now = Date.now;
         Date.now = function() { return Infinity; };
@@ -36,7 +37,21 @@ describe('Gauge Directive Rendering', function () {
 
         flushAllD3Transitions();
 
-        expect(element.html().trim()).toEqual(
+        var renderedHTML = element.html().trim();
+
+        expect($('g', renderedHTML)).toExist();
+        expect($('g', renderedHTML).attr('transform')).toEqual('translate(70,70)');
+
+        expect($('path.arc_inner', renderedHTML)).toExist();
+        expect($('path.arc_outer', renderedHTML)).toExist();
+        expect($('path.circle_center', renderedHTML)).toExist();
+        expect($('text', renderedHTML)).toExist();
+        expect($('text .progress_number', renderedHTML)).toExist();
+        expect($('text .progress_number', renderedHTML)).toContainText('66');
+        expect($('text.progress_label', renderedHTML)).toExist();
+        expect($('text.progress_label', renderedHTML)).toContainText('Progress');
+
+        expect(renderedHTML).toEqual(
             '<svg width="140" height="140">' +
             '<g transform="translate(70,70)">' +
             '<path class="arc_inner" d="M0,53A53,53 0 1,1 0,-53A53,53 0 1,1 0,53M0,50A50,50 0 1,0 0,-50A50,50 0 1,0 0,50Z"></path>' +

@@ -6,13 +6,22 @@ module.exports = function (config) {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
 
-
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
 
+        plugins: [
+            'karma-chrome-launcher',
+            'karma-phantomjs-launcher',
+            'karma-ng-html2js-preprocessor',
+            'karma-jasmine',
+            'karma-coverage'
+        ],
+
         // list of files / patterns to load in the browser
         files: [
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
             'node_modules/angular/angular.js',
             'src/vendor/angular-ui-router.min.js',
             'src/vendor/d3.min.js',
@@ -28,7 +37,8 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            '**/*.tmpl.html': ['ng-html2js']
+            '**/*.tmpl.html': ['ng-html2js'],
+            './src/**/*.js' : ['coverage']
         },
 
         ngHtml2JsPreprocessor: {
@@ -43,7 +53,7 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
 
         // web server port
         port: 9876,
@@ -64,6 +74,21 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false
+        singleRun: false,
+
+        junitReporter: {
+            outputFile: 'reports/junit/TESTS-xunit.xml'
+        },
+
+        coverageReporter: {
+            dir: 'reports',
+            subdir: 'coverage',
+            reporters: [
+                {type: 'lcov'},
+                {type: 'text-summary'},
+                {type: 'text'}
+            ]
+
+        }
     });
 };
