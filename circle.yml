@@ -9,4 +9,4 @@ deployment:
   production:
     branch: master
     commands:
-      - node ./node_modules/gulp/bin/gulp.js deploy
+      - bin/circle.sh
