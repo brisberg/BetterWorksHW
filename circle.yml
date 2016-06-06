@@ -1,7 +1,7 @@
 machine:
   environment:
     GIT_DEPLOY_USERNAME: brisberg
-    GIT_DEPLOY_EMAIL: brandon.risberg@gmail.com
+    GIT_DEPLOY_EMAIL: brisberg@users.noreply.github.com
 
 deployment:
   production:
