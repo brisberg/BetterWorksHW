@@ -1,0 +1,12 @@
+machine:
+  environment:
+    GIT_DEPLOY_USERNAME: brisberg
+    GIT_DEPLOY_EMAIL: brandon.risberg@gmail.com
+  ruby:
+    version: 2.3.1
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - node ./node_modules/gulp/bin/gulp.js deploy
